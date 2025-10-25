@@ -216,7 +216,7 @@ internal class Program
 
     private static int GetUserId()
     {
-        return usuarios.Max(x => x.ID) + 1;
+        return usuarios.Any() ? usuarios.Max(x => x.ID) + 1 : 1;
     }
 
     private static void EmprestarLivro()
@@ -274,8 +274,8 @@ internal class Program
     private static void UsuariosBase(out Aluno aluno1, out Professor professor1)
     {
         Console.WriteLine("--- CADASTRO DE USUÁRIOS ---");
-        aluno1 = new Aluno("João Silva", 1, "Ciência da Computação");
-        professor1 = new Professor("Dr. Carlos Mendes", 2, "Engenharia de Software");
+        aluno1 = new Aluno("João Silva", GetUserId(), "Ciência da Computação");
+        professor1 = new Professor("Dr. Carlos Mendes", GetUserId(), "Engenharia de Software");
         usuarios.AddRange(new Usuario[] { aluno1, professor1 });
 
         Console.WriteLine($"Aluno cadastrado: {aluno1.Nome} - Curso: {aluno1.Curso}");
