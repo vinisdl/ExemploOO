@@ -18,5 +18,6 @@ namespace Trabalho_GB.Entidades
         }
 
         public abstract string ExibirTipoUsuario();
+        internal abstract void ExibirInformacoes();
     }
 }

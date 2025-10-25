@@ -19,5 +19,10 @@ namespace Trabalho_GB.Entidades
         {
             return "Aluno";
         }
+
+        internal override void ExibirInformacoes()
+        {
+            Console.WriteLine($"Aluno: {Nome} - Curso: {Curso}");
+        }
     }
 }

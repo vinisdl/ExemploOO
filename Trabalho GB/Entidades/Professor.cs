@@ -19,5 +19,10 @@ namespace Trabalho_GB.Entidades
         {
             return "Professor";
         }
+
+        internal override void ExibirInformacoes()
+        {
+            Console.WriteLine($"Professor: {Nome} - Departamento: {Departamento}");
+        }
     }
 }
